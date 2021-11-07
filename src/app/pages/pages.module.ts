@@ -1,3 +1,4 @@
+import { OffersModule } from './offers/offers.module';
 import { NgModule } from '@angular/core';
 import { DetailModule } from './detail/detail.module';
 import { HomeModule } from './home/home.module';
@@ -8,13 +9,15 @@ import { LoginModule } from './login/login.module';
   imports: [
     HomeModule, 
     DetailModule,
-    LoginModule
+    LoginModule,
+    OffersModule,
     
   ],
   exports: [
     HomeModule, 
     DetailModule,
-    LoginModule
+    LoginModule,
+    OffersModule,
     
   ],
   providers: [],

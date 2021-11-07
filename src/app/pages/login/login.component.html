@@ -1,23 +1,50 @@
-<div class="container">
-<form>
-    <div class="mb-3">
-      <label for="user" class="form-label">User</label>
-      <input type="user" class="form-control" id="email">
+<div class="col-md-6 offset-md-3 mt -5">
+  <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Username</label>
+      <input
+        type="email"
+        formControlName="username"
+        class="form-control"
+        id="exampleInputEmail1"
+        class="form-control is-invalid"
+        [ngClass]="{
+          'is-invalid': this.send && this.loginForm.controls.username.errors
+        }"
+        placeholder="Introduce tu usuario..."
+      />
+      <div class="invalid-feedback" *ngIf="send && this.loginForm.controls.username.errors?.required">Tienes que rellenar este campo</div>
+      
     </div>
-    <div class="mb-3">
-      <label for="password" class="form-label">Password</label>
-      <input type="password" class="form-control" id="password">
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input
+        type="password"
+        formControlName="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        class="form-control is-invalid"
+        [ngClass]="{
+          'is-invalid': this.send && this.loginForm.controls.password.errors
+        }"
+        placeholder="Introduce tu password..."
+      />
+      <div class="invalid-feedback" *ngIf="send && this.loginForm.controls.password.errors?.required">Tienes que rellenar este campo</div> 
     </div>
-    <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="rememberMe">
-      <label class="form-check-label" for="remenberMe">Recuerdame</label>
+          
+    <div class="form-check">
+      <input
+        type="checkbox"
+        formControlName="remenberMe"
+        class="form-check-input"
+        id="exampleCheck1"
+      />
+      <label class="form-check-label" for="exampleCheck1">Recuerdame</label>
     </div>
-    <button type="submit" class="btn btn-primary">Login</button>
-  </form>
-</div>
-
-<div class="row">
-    <div class="col-md-12 text-center">
-        <button type="submit" (click)="this.goToHome()" class="btn btn-primary">Ir al Home</button>
-    </div>
+    <button [disabled]="isLoading" type="submit" class="btn btn-primary">
+      <span class="spinner-border spinner-border-sm mr-1" *ngIf="isLoading"></span>
+        Iniciar sesión      
+    </button>
+    <div *ngIf="errorMsg" class="alert alert-danger mt-3 mb-0">{{errorMsg}}</div>
+  </form> 
 </div>

@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="table-responsive">
+      <table class="table">
+        <thead class="table">
+          <tr class="table-dark">
+            <th scope="col">Oferta</th>
+            <th scope="col">Enlace</th>
+          </tr>
+        </thead>
+        <tbody class="table-hover" *ngFor="let item of this.arrayTitleOffer">
+          <tr>
+            <td>{{item.titulo}}</td>
+            <td><button class="btn btn-primary" (click)="this.eraseOffer(item.id)" >Borrar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <button type="submit" class="btn btn-primary">Nueva Oferta</button>
+    </div>
+  </div>

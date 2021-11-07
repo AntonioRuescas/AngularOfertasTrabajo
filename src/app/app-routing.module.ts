@@ -2,10 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TableComponent } from './components/table/table.component';
 import { DetailComponent } from './pages/detail/detail.component';
-
 import { HomeComponent } from './pages/home/home.component';
-
 import { LoginComponent } from './pages/login/login.component';
+import { OffersComponent } from './pages/offers/offers.component';
 
 const routes: Routes = [
   {
@@ -24,13 +23,17 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: TableComponent
+        component: TableComponent,
       },
       {
         path: 'detail/:id',
         component: DetailComponent,
       },
     ],
+  },
+  {
+    path: 'offers',
+    component: OffersComponent,
   },
 ];
 
