@@ -4,6 +4,7 @@ import { TableComponent } from './components/table/table.component';
 import { DetailComponent } from './pages/detail/detail.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { NewOfferComponent } from './pages/newOffer/newOffer.component';
 import { OffersComponent } from './pages/offers/offers.component';
 
 const routes: Routes = [
@@ -32,9 +33,14 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'offers',
+    path: 'offerAdmin',
     component: OffersComponent,
   },
+  {
+    path: 'newOffer',
+    component: NewOfferComponent,
+  },
+
 ];
 
 @NgModule({

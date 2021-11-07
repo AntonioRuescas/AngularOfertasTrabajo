@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <router-outlet></router-outlet>
+  <div class="container">
+    <div class="table-responsive">
+      <table class="table">
+        <thead class="table">
+          <tr class="table-dark">
+            <th scope="col">Oferta</th>
+            <th scope="col">Acción</th>
+          </tr>
+        </thead>
+        <tbody class="table-hover" *ngFor="let item of this.arrayTitleOfferAdmin">
+          <tr>
+            <td>{{item.titulo}}</td>
+            <td><button class="btn btn-primary" (click)="this.eraseOffer(item.id)">Borrar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

@@ -2,6 +2,7 @@ import { LoginService } from './../../services/login.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ContactFormLogin } from 'src/app/models/contactFormLogin';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private router: Router
   ) {
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
@@ -29,11 +31,8 @@ export class LoginComponent implements OnInit {
 
   submitForm() {
     this.send = true;
-    if (!this.loginForm.valid) 
-    return;
+    if (!this.loginForm.valid) return;
     let FormLogin: ContactFormLogin = new ContactFormLogin(
-
-    
       this.loginForm.controls.username.value,
       this.loginForm.controls.password.value,
       this.loginForm.controls.remenberMe.value,
@@ -45,14 +44,15 @@ export class LoginComponent implements OnInit {
         console.log(JSON.stringify(response));
         this.isLoading = false;
         this.errorMsg = null;
+        this.router.navigate(['/offerAdmin']);
       },
       (error) => {
         console.log('ERROR:' + JSON.stringify(error));
-        this.errorMsg = `⚠️ No se ha podido iniciar sesión (${error.error?.error})`
+        this.errorMsg = '⚠️ No se ha podido iniciar sesión';
         this.isLoading = false;
-    },
-      ()=>{
-          this.isLoading = false;
+      },
+      () => {
+        this.isLoading = false;
       }
     );
   }

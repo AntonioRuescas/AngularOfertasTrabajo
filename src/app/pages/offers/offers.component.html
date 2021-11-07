@@ -1,24 +1,25 @@
-<div class="container">
-    <div class="table-responsive">
-      <table class="table">
-        <thead class="table">
-          <tr class="table-dark">
-            <th scope="col">Oferta</th>
-            <th scope="col">Enlace</th>
-          </tr>
-        </thead>
-        <tbody class="table-hover" *ngFor="let item of this.arrayTitleOffer">
-          <tr>
-            <td>{{item.titulo}}</td>
-            <td><button class="btn btn-primary" (click)="this.eraseOffer(item.id)" >Borrar</button></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
 
-  <div class="row">
-    <div class="col-md-12 text-center">
-      <button type="submit" class="btn btn-primary">Nueva Oferta</button>
-    </div>
-  </div>
+  <body>
+    <div class="container mt-4 mb-4">
+        <div class="row">
+          <div class="col-md-12 text-end">
+            <button type="submit" class="btn btn-primary">
+              Insertar nueva Oferta
+            </button>
+          </div>
+        </div>
+      </div>
+      
+    <router-outlet></router-outlet>
+
+    
+  </body>
+</html>

@@ -1,3 +1,4 @@
+import { TableAdminModule } from './tableAdmin/tableAdmin.module';
 import { TableModule } from './table/table.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -9,9 +10,11 @@ import { RouterModule } from '@angular/router';
     imports: [ 
         CommonModule,
         TableModule,
+        TableAdminModule,
         RouterModule ],
     exports: [
-        TableModule
+        TableModule,
+        TableAdminModule,
     ],
     providers: [],
 })

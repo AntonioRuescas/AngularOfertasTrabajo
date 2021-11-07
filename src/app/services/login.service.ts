@@ -24,7 +24,7 @@ export class LoginService {
   }
 
   performLogin(enter: ContactFormLogin): Observable<ContactFormLogin> {
-    console.log('performLogin('+ JSON.stringify(enter) + ')')
+    console.log('performLogin(' + JSON.stringify(enter) + ')');
     let loginUrl = AppEndPoints.ENDPOINT_AUTHENTICATE;
     return this.http.post<ContactFormLogin>(loginUrl, enter).pipe(
       map((returnAPI) => {
