@@ -66,9 +66,9 @@ export class LoginService {
     console.log(this.token);
   }
   //insertNewOffer(body: Offer): Observable<any> {
-  insertNewOffer(titulo:string, descripcion: string, empresa: string, salario: number, ciudad: string, email: string): Observable<any> {
+  insertNewOffer(newOffer:any): Observable<any> {
     const headers = {Authorization: `Bearer ${this.token}`, 'Content-Type': 'application/json'}
-    return this.http.post(AppEndPoints.ENDPOINT_OFFER_TITLE, {titulo, descripcion, empresa, salario, ciudad, email}, {headers})
+    return this.http.post(AppEndPoints.ENDPOINT_OFFER_TITLE, newOffer, {headers})
   }
   
 }

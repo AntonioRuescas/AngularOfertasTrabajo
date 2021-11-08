@@ -7,11 +7,12 @@
     <title>Document</title>
   </head>
 
-  <body>
-    <div class="container mt-4 mb-4">
+  <body class="bg-app">
+    <div class="container">
+      <div class="mb-4">
         <div class="row">
           <div class="col-md-12 text-end">
-            <button type="submit" class="btn btn-primary" >
+            <button type="submit" class="btn btn-primary" (click)="goToNewOffer()">
               Insertar nueva Oferta
             </button>
           </div>
@@ -19,7 +20,8 @@
       </div>
       
     <router-outlet></router-outlet>
-
+    </div>
+    
     
   </body>
 </html>

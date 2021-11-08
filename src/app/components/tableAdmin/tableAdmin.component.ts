@@ -10,42 +10,40 @@ import { HomeService } from 'src/app/services/home.service';
   providers: [HomeService],
 })
 export class TableAdminComponent implements OnInit {
-  
   public arrayTitleOfferAdmin!: Array<any>;
 
   constructor(
-    private homeService: HomeService, 
+    private homeService: HomeService,
     private router: Router,
     private loginService: LoginService
-    ) {}
+  ) {}
 
   ngOnInit(): void {
+    this.getReloadOffer();
+  }
+  public eraseOffer(id: string): void {
+    this.loginService.eraseOffer(id).subscribe(
+      (response) => {
+        console.log(response);
+        //this.homeService.getDataOffer();
+        this.getReloadOffer();
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+
+    console.log('erase id ', id);
+    //this.router.navigate(['home']);
+  }
+  public getReloadOffer(): void {
     this.homeService.getDataOffer().subscribe(
       (response) => {
-        this.arrayTitleOfferAdmin = response; 
+        this.arrayTitleOfferAdmin = response;
       },
       (error) => {
         console.log('Error ' + JSON.stringify(error));
       }
     );
   }
-  public eraseOffer(id: string): void {
-    this.loginService.eraseOffer(id).subscribe(
-      (response) => {
-        console.log(response);
-        this.homeService.getDataOffer();
-      },
-      (error) =>{
-        console.log(error);
-      },
-      ()=>{
-        window.location.reload; //Sirve para recargar la pantalla que estamos viendo.
-      }
-    )
-    
-    console.log('erase id ', id);
-    //this.router.navigate(['home']);
-  }
-  
-
 }
