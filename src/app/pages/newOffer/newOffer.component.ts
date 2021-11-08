@@ -15,7 +15,6 @@ export class NewOfferComponent implements OnInit {
   newOfferForm: FormGroup;
   send: boolean = false;
 
-
   constructor(
     private formBuilder: FormBuilder,
     private loginService: LoginService,
@@ -23,17 +22,18 @@ export class NewOfferComponent implements OnInit {
     private router: Router
   ) {
     this.newOfferForm = this.formBuilder.group({
-      
       title: ['', [Validators.required, Validators.maxLength(100)]],
       description: ['', [Validators.required, Validators.maxLength(300)]],
       company: ['', [Validators.required, Validators.maxLength(50)]],
       salary: ['', Validators.required],
       city: ['', [Validators.required, Validators.maxLength(50)]],
-      email: ['', [Validators.required, Validators.maxLength(50), Validators.email],
+      email: [
+        '',
+        [Validators.required, Validators.maxLength(50), Validators.email],
       ],
     });
   }
-  get f(){
+  get f() {
     return this.newOfferForm.controls;
   }
 
@@ -46,13 +46,13 @@ export class NewOfferComponent implements OnInit {
       empresa: this.newOfferForm.value.company,
       salario: this.newOfferForm.value.salary,
       ciudad: this.newOfferForm.value.city,
-      email: this.newOfferForm.value.email
+      email: this.newOfferForm.value.email,
     };
     console.log(newOfferData);
 
     this.loginService.insertNewOffer(newOfferData).subscribe(
       (response) => {
-        console.log('respuesta ',response);
+        console.log('respuesta ', response);
 
         this.goToOfferAdmin();
       },
@@ -63,9 +63,7 @@ export class NewOfferComponent implements OnInit {
     this.homeService.getDataOffer();
   }
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
   goToOfferAdmin() {
     this.router.navigate(['offerAdmin']);
