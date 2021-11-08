@@ -19,9 +19,5 @@ export class HomeService {
     return this.http.get(url);
   }
 
-  //Función para borrar ofertas.
-  public eraseOffer(id: string): Observable<any> {
-    let url = AppEndPoints.ENDPOINT_OFFER_TITLE_ID + id;
-    return this.http.delete(url);
-  }
+  
 }

@@ -1,3 +1,4 @@
+import { TableAdminComponent } from './components/tableAdmin/tableAdmin.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TableComponent } from './components/table/table.component';
@@ -11,36 +12,40 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: 'home',
-    pathMatch: 'full',
+    pathMatch: 'full'
   },
   {
     path: 'login',
-    component: LoginComponent,
+    component: LoginComponent
   },
-
   {
     path: 'home',
     component: HomeComponent,
     children: [
       {
         path: '',
-        component: TableComponent,
+        component: TableComponent
       },
       {
         path: 'detail/:id',
-        component: DetailComponent,
+        component: DetailComponent
       },
     ],
   },
   {
     path: 'offerAdmin',
     component: OffersComponent,
+    children:[
+      {
+        path: '',
+        component: TableAdminComponent
+      },
+    ]
   },
   {
     path: 'newOffer',
-    component: NewOfferComponent,
+    component: NewOfferComponent
   },
-
 ];
 
 @NgModule({

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-offers',
@@ -6,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./offers.component.css'],
 })
 export class OffersComponent implements OnInit {
-  constructor() {}
+  constructor(
+    private router: Router
+    ) {
+
+    }
 
   ngOnInit(): void {}
+
+ goToNewOffer(){
+   this.router.navigate(['newOffer'])
+ }
+  
 }
