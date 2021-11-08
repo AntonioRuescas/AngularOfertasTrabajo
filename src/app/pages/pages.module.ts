@@ -7,8 +7,20 @@ import { LoginModule } from './login/login.module';
 
 @NgModule({
   declarations: [],
-  imports: [HomeModule, DetailModule, LoginModule, OffersModule, NewOfferModule],
-  exports: [HomeModule, DetailModule, LoginModule, OffersModule, NewOfferModule],
+  imports: [
+    HomeModule,
+    DetailModule,
+    LoginModule,
+    OffersModule,
+    NewOfferModule,
+  ],
+  exports: [
+    HomeModule,
+    DetailModule,
+    LoginModule,
+    OffersModule,
+    NewOfferModule,
+  ],
   providers: [],
 })
 export class PagesModule {}

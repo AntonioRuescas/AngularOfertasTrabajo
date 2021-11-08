@@ -7,16 +7,16 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { NewOfferComponent } from './pages/newOffer/newOffer.component';
 import { OffersComponent } from './pages/offers/offers.component';
-
+//Rutas para la navegación.
 const routes: Routes = [
   {
     path: '',
     redirectTo: 'home',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
     path: 'home',
@@ -24,27 +24,27 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: TableComponent
+        component: TableComponent,
       },
       {
         path: 'detail/:id',
-        component: DetailComponent
+        component: DetailComponent,
       },
     ],
   },
   {
     path: 'offerAdmin',
     component: OffersComponent,
-    children:[
+    children: [
       {
         path: '',
-        component: TableAdminComponent
+        component: TableAdminComponent,
       },
-    ]
+    ],
   },
   {
     path: 'newOffer',
-    component: NewOfferComponent
+    component: NewOfferComponent,
   },
 ];
 

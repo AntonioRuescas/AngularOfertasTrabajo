@@ -1,40 +1,24 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
-<body>
-  
-  <div class="container">
-    <div class="table-responsive">
-      <h3 class="mt-3">Ofertas de trabajo</h3>
-      <table class="table">
-        <thead class="table">
-          <tr class="table-dark">
-            <th scope="col">Oferta</th>
-            <th scope="col">Enlace</th>
-          </tr>
-        </thead>
-        <tbody class="table-hover" *ngFor="let item of this.arrayTitleOffer">
-          <tr>
-            <td>{{item.titulo}}</td>
-            <td><button class="btn btn-primary" (click)="this.goToDetailOffer(item.id)">Ver</button></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+<div class="container">
+  <div class="table-responsive">
+    <h3 class="mt-4 mb-4">Ofertas de trabajo</h3>
+    <table class="table">
+      <thead class="table">
+        <tr class="table-dark">
+          <th scope="col">Oferta</th>
+          <th scope="col">Enlace</th>
+        </tr>
+      </thead>
+      <tbody class="table-hover" *ngFor="let item of this.arrayTitleOffer">
+        <tr>
+          <td>{{item.titulo}}</td>
+          <td><button class="btn btn-dark" (click)="this.goToDetailOffer(item.id)">Ver</button></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-
   <div class="row">
     <div class="col-md-12 text-center">
-      <button type="submit" (click)="this.goToLogin()" class="btn btn-primary mt-3 mb-5">Ir al login</button>
+      <button type="submit" (click)="this.goToLogin()" class="btn btn-dark mt-5 mb-3">Ir al login</button>
     </div>
   </div>
-</body>
-
-</html>
+</div>

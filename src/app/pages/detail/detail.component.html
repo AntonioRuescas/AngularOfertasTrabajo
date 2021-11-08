@@ -1,59 +1,53 @@
-<body>
-    <!--  
-    <router-outlet></router-outlet>-->
-    <div class="container">
-        <div class="table-responsive">
-            <table class="table">
-                <thead class="table">
-                    <tr class="table-dark">
-                        <th scope="col">Oferta de trabajo</th>
-                    </tr>
-                </thead>
-                <tbody class="table-hover">
-                    <tr class="table-dark">
-                        <td>Titulo:</td>
-                    </tr>
-                    <tr>
-                        <td>{{this.offer.titulo}}</td>
-                    </tr>
-                    <tr class="table-dark">
-                        <td>Descripcion:</td>
-                    </tr>
-                    <tr>
-                        <td>{{this.offer.descripcion}}</td>
-                    </tr>
-                    <tr class="table-dark">
-                        <td>Empresa:</td>
-                    </tr>
-                    <tr>
-                        <td>{{this.offer.empresa}}</td>
-                    </tr>
-                    <tr class="table-dark">
-                        <td>Ciudad:</td>
-                    </tr>
-                    <tr>
-                        <td>{{this.offer.ciudad}}</td>
-                    </tr>
-                    <tr class="table-dark">
-                        <td>Salario:</td>
-                    </tr>
-                    <tr>
-                        <td>{{this.offer.salario}}</td>
-                    </tr>
-                    <tr class="table-dark">
-                        <td>Email contacto:</td>
-                    </tr>
-                    <tr>
-                        <td>{{this.offer.email}}</td>
-                    </tr>
-                </tbody>
-            </table>
+<div class="container">
+    <div class="table-responsive">
+        <table class="table mt-5">
+            <h3>Detalle oferta de trabajo</h3>
+            <br>
+            <tbody class="table-hover">
+                <tr class="table-dark">
+                    <td>Titulo:</td>
+                </tr>
+                <tr>
+                    <td>{{this.offer.titulo}}</td>
+                </tr>
+                <tr class="table-dark">
+                    <td>Descripcion:</td>
+                </tr>
+                <tr>
+                    <td>{{this.offer.descripcion}}</td>
+                </tr>
+                <tr class="table-dark">
+                    <td>Empresa:</td>
+                </tr>
+                <tr>
+                    <td>{{this.offer.empresa}}</td>
+                </tr>
+                <tr class="table-dark">
+                    <td>Ciudad:</td>
+                </tr>
+                <tr>
+                    <td>{{this.offer.ciudad}}</td>
+                </tr>
+                <tr class="table-dark">
+                    <td>Salario:</td>
+                </tr>
+                <tr>
+                    <td>{{this.offer.salario}}</td>
+                </tr>
+                <tr class="table-dark">
+                    <td>Email contacto:</td>
+                </tr>
+                <tr>
+                    <td>{{this.offer.email}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <button type="submit" (click)="this.goToHome()" class="btn btn-dark">Ir a Home</button>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-12 text-center">
-          <button type="submit" (click)="this.goToHome()" class="btn btn-primary">Ir a Home</button>
-        </div>
-      </div>
-</body>
+
+</div>

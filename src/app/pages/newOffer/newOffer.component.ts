@@ -12,6 +12,7 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./newOffer.component.css'],
 })
 export class NewOfferComponent implements OnInit {
+  //Declaramos variables a utilizar.
   newOfferForm: FormGroup;
   send: boolean = false;
 
@@ -21,6 +22,7 @@ export class NewOfferComponent implements OnInit {
     private homeService: HomeService,
     private router: Router
   ) {
+    //Añadimos las validaciones.
     this.newOfferForm = this.formBuilder.group({
       title: ['', [Validators.required, Validators.maxLength(100)]],
       description: ['', [Validators.required, Validators.maxLength(300)]],
@@ -33,10 +35,7 @@ export class NewOfferComponent implements OnInit {
       ],
     });
   }
-  get f() {
-    return this.newOfferForm.controls;
-  }
-
+  //Al pulsar en enviar se validan las validaciones y si son correctas se subscribe insertando una nueva oferta.
   submitForm() {
     this.send = true;
     if (!this.newOfferForm.valid) return;
@@ -62,9 +61,9 @@ export class NewOfferComponent implements OnInit {
     );
     this.homeService.getDataOffer();
   }
-
   ngOnInit(): void {}
 
+  //Método para navegar a las ofertas del administrador.
   goToOfferAdmin() {
     this.router.navigate(['offerAdmin']);
   }

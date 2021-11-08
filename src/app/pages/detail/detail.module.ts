@@ -4,12 +4,9 @@ import { DetailComponent } from './detail.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-    declarations: [DetailComponent],
-    imports: [ 
-        CommonModule,
-        RouterModule 
-    ],
-    exports: [DetailComponent],
-    providers: [],
+  declarations: [DetailComponent],
+  imports: [CommonModule, RouterModule],
+  exports: [DetailComponent],
+  providers: [],
 })
 export class DetailModule {}

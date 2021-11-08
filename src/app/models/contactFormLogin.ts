@@ -1,3 +1,4 @@
+//Modelo de clase para creación del Login
 export class ContactFormLogin {
   public username: string;
   public password: string;

@@ -1,10 +1,18 @@
 .bg-app {
-    margin: 0;
-    min-height: 100vh;
-    height: 100%;
-    background-image: url(../../../assets/images/bg-app.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-  }
+  margin: 0;
+  min-height: 100vh;
+  height: 100%;
+  background-image: url(../../../assets/images/bg-app.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.container {
+  background-color: whitesmoke;
+  padding-bottom: 5%;
+  padding-top: 5%;
+}
+.center {
+  padding-top: 5%;
+}

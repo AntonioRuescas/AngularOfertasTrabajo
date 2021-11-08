@@ -9,8 +9,8 @@ import { HomeService } from 'src/app/services/home.service';
   styleUrls: ['./detail.component.css'],
 })
 export class DetailComponent implements OnInit, OnDestroy {
+  //Declaramos variables a utilizar.
   public sub: any;
-  //public arrayOfferId!: Array<any>;
   public offer = new Offer();
 
   constructor(
@@ -19,6 +19,7 @@ export class DetailComponent implements OnInit, OnDestroy {
     private homeService: HomeService
   ) {}
 
+  //En el OnInit nos subscribimos para mostrar el detalle de la oferta.
   ngOnInit(): void {
     this.sub = this.route.paramMap.subscribe((parms: ParamMap) => {
       console.log('El id de la noticia es ' + parms.get('id'));
@@ -33,10 +34,11 @@ export class DetailComponent implements OnInit, OnDestroy {
       );
     });
   }
+  //Método para desuscribirse
   ngOnDestroy(): void {
     this.sub.unsubscribe();
   }
-
+  //Método para ir a la pantalla de inicio.
   public goToHome(): void {
     this.router.navigate(['home']);
   }

@@ -10,6 +10,7 @@ import { HomeService } from 'src/app/services/home.service';
   providers: [HomeService],
 })
 export class TableAdminComponent implements OnInit {
+  //Declaramos variables a utilizar.
   public arrayTitleOfferAdmin!: Array<any>;
 
   constructor(
@@ -21,21 +22,21 @@ export class TableAdminComponent implements OnInit {
   ngOnInit(): void {
     this.getReloadOffer();
   }
+  //Método para borrar las ofertas.
   public eraseOffer(id: string): void {
     this.loginService.eraseOffer(id).subscribe(
       (response) => {
         console.log(response);
-        //this.homeService.getDataOffer();
         this.getReloadOffer();
       },
       (error) => {
         console.log(error);
       }
     );
-
+    //Compruebo borrado de la oferta.
     console.log('erase id ', id);
-    //this.router.navigate(['home']);
   }
+  //Método para recargar la vista de ofertas.
   public getReloadOffer(): void {
     this.homeService.getDataOffer().subscribe(
       (response) => {
